@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iype Eldho - Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Iype Eldho - Projects</h1>
+
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <h2>Machine Learning Researcher at Active Robotics Sensing Lab, NCSU (2023-24)</h2>
+            <ul>
+                <li>Developed a deep learning model to classify audio as speech or cough and detect Out-of-distribution samples using transformer-to-CNN knowledge distillation, improving baseline CNN model accuracy from 91% to 98%.</li>
+                <li>Utilized Decoupling MaxLogit and Virtual Logit Matching OOD detection methods with neural networks like WideResNet and DenseNet, achieving DenseNet AUROCs of 90.85% for OOD-Human and 82.34% for OOD-Other categories, with ViM showing superior performance.</li>
+                <li><a href="https://repository.lib.ncsu.edu/items/deebf03b-6a65-4772-a257-018008982c01">Thesis: "Audio-Based Detection of Speech and Cough Using Out-of-Distribution Techniques for Filtering Similar and Different Kinds of Sounds."</a></li>
+                <li>Developed a multimodal cough and speech detection and enhanced it using an Out-of-Distribution algorithm maintaining 92% accuracy after adding the OOD samples.</li>
+                <li><a href="https://epapers2.org/embc2024/ESR/paper_details.php?paper_id=7124">Publication: “Robust Multimodal Cough and Speech Detection using Wearables: A Preliminary Analysis”</a> <a href="./EMBC2024___Cough.pdf">(Publication Link)</a></li>
+            </ul>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <h2>Analysis of Unsupervised Domain Adaptation Models (2022)</h2>
+            <p>Modelled Transformers and Neural Networks to assess image classification performance across domains, yielding a top F1 score of 97%, from the baseline of 76%.</p>
+            <p><a href="https://github.com/viper-2000/Unsupervised-Domain-Adaptation">Github Link</a> | <a href="./Unsupervised_Domain_Adaptation.pdf">Project Poster</a></p>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <h2>Geographic Terrain Identification for Prosthetic Limb (2022)</h2>
+            <p>Produced a PyTorch-based LSTM model that utilized accelerometer and gyroscope data from a prosthetic limb to identify geographic terrain types, achieving the top F1 score of 88% from a baseline of 67%.</p>
+            <p><a href="https://github.com/viper-2000/terrain-identification">Github Link</a></p>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide">
+            <h2>Cross-lingual Emotion Recognition from Speech (2022)</h2>
+            <p>Devised a Domain Adversarial Neural Network to identify emotions from a Mandarin Speech Dataset using an English dataset, achieving F1 scores of 97% & 60% in supervised and unsupervised models (20% boost).</p>
+            <p><a href="./Cross_Lingual_SER.pdf">Project Poster</a></p>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide">
+            <h2>Heartbeat Anomaly Detection (2022)</h2>
+            <p>Generated a TensorFlow-based pipeline to detect arrhythmia in heartbeat sounds using SVM and LSTM models, with 78% F1-Score. Optimized the pipeline through cross-validation and Grid Search with 84% accuracy.</p>
+            <p><a href="https://github.com/viper-2000/heart-sound-classification-1">Github Link</a> | <a href="./Heart_sound_classification.pdf">Project Poster</a></p>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <!-- Link to Home Page -->
+    <div class="back-home">
+        <a href="index.html">← Back to Home</a>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let slideInterval = setInterval(() => changeSlide(1), 15000); // Auto-slide every 15 seconds
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => changeSlide(1), 15000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => showSlide(currentSlide));
+    </script>
+</body>
+</html>

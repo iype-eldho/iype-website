@@ -1,0 +1,200 @@
+/* Reset basic margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Consolas', 'Courier New', monospace;
+    color: #f7f5e9;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #303a52;
+    color: #f7f5e9;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header styles */
+h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* About Container Styling for index.html */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px;
+    width: 100%;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.photo-frame {
+    padding: 10px;
+    border: 3px solid #8c8fa1; /* Frame color */
+    border-radius: 10px;
+    background-color: #3b455f; /* Background color for the frame */
+}
+
+.photo-frame img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.about-text {
+    max-width: 500px;
+    color: #f7f5e9;
+}
+
+/* Slideshow Container for workexp.html and projects.html */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.slide {
+    display: none;
+    padding: 20px;
+    background-color: #3b455f;
+    border: 1px solid #9da0b3;
+    border-radius: 5px;
+}
+
+.slide.active {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -20px;
+    color: #f7f5e9;
+    font-size: 1.5rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    user-select: none;
+    transition: background 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.nav-links h3 a {
+    text-decoration: none;
+    color: #ebe7d0;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.nav-links h3 a:hover {
+    color: #ffffff;
+}
+
+/* Contact Section */
+#contact {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.contact-links a {
+    text-decoration: none;
+    color: #d0c8a9;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.contact-links a:hover {
+    color: #ffffff;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #f2efde;
+}
+
+/* Mobile Layout */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-frame img {
+        width: 150px;
+    }
+
+    .contact-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .prev, .next {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+}

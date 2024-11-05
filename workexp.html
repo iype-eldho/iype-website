@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iype Eldho - Work Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Iype Eldho - Work Experience</h1>
+
+    <div class="slideshow-container">
+        <!-- Slide 1 -->
+        <div class="slide active">
+            <h2>North Carolina Institute for Climate Studies, Asheville</h2>
+            <ul>
+                <li>
+                    <h3>Research and Development Associate (August 2024 – Present)</h3>
+                    <p>
+                        Currently working on Data Extraction, Time Series Analysis, and Dataset Comparison of the Standard
+                        Precipitation Index and Standardized Precipitation-Evapotranspiration Index for any location on Earth.
+                    </p>
+                </li>
+                <li>
+                    <h3>Data Science Student Intern (July 2023 – June 2024)</h3>
+                    <ul>
+                        <li>
+                            Created a Python model to generate maps and graphs of the US, illustrating the impact of 8 teleconnection indices on the standardized precipitation index drought using netCDF and Zarr data.
+                        </li>
+                        <li>
+                            Developed an R-based Machine Learning (KNN, Linear Regression) model to predict drought intensity – improved model recall from 79% to 90% by analyzing teleconnection relevance.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide">
+            <h2>Samsung Research Institute – Bengaluru, India</h2>
+            <ul>
+                <li>
+                    <h3>Machine Learning Engineer Intern (January 2022 – June 2022)</h3>
+                    <p>
+                        Elevated the data compression capabilities of a Convolutional Autoencoder model, from 65% to 98% accuracy
+                        used in compressing and transmitting beam values within a 6G-System MATLAB simulator.
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide">
+            <h2>Shalaka Connected Devices – Pune, India</h2>
+            <ul>
+                <li>
+                    <h3>Software Developer Intern (May 2020 – August 2020)</h3>
+                    <ul>
+                        <li>
+                            Designed a Python-driven simulator to mirror light ambient sensor data, seamlessly uploading sensor output via MQTT with 7 topics, to a cloud-based database for real-time analysis.
+                        </li>
+                        <li>
+                            Programmed 9 API functionalities to access the light sensor's control, status, and data registers.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <!-- Link to Home Page -->
+    <div class="back-home">
+        <a href="index.html">← Back to Home</a>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+        let slideInterval = setInterval(() => changeSlide(1), 15000); // Auto-slide every 15 seconds
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => changeSlide(1), 15000);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => showSlide(currentSlide));
+    </script>
+</body>
+</html>
