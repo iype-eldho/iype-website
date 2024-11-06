@@ -1,4 +1,4 @@
-/* Global styles for all pages */
+/* Reset basic margins and paddings */
 * {
     margin: 0;
     padding: 0;
@@ -7,6 +7,7 @@
     color: #f7f5e9;
 }
 
+/* Body styling */
 body {
     display: flex;
     flex-direction: column;
@@ -100,10 +101,19 @@ h1 {
     color: #d0c8a9;
     font-size: 1.2rem;
     transition: color 0.3s;
+    display: flex;
+    align-items: center; /* Center aligns icon and text */
 }
 
 .contact-links a:hover {
     color: #ffffff;
+}
+
+/* Icons in Contact Links */
+.contact-links a i {
+    margin-right: 8px; /* Spacing between icon and text */
+    font-size: 1.2rem; /* Adjust icon size */
+    vertical-align: middle;
 }
 
 /* Footer */
