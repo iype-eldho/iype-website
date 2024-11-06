@@ -1,4 +1,4 @@
-/* Reset basic margins and paddings */
+/* Global styles for all pages */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +7,6 @@
     color: #f7f5e9;
 }
 
-/* Body styling */
 body {
     display: flex;
     flex-direction: column;
@@ -27,7 +26,7 @@ h1 {
     text-align: center;
 }
 
-/* About Container Styling for index.html */
+/* About Section for index.html only */
 .about-container {
     display: flex;
     align-items: center;
@@ -37,7 +36,6 @@ h1 {
     gap: 20px;
 }
 
-/* Photo Frame */
 .photo-frame {
     flex: 1;
     display: flex;
@@ -50,12 +48,11 @@ h1 {
 
 .photo-frame img {
     width: 100%;
-    max-width: 250px;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* Makes the image fill the frame without distortion */
     border-radius: 10px;
 }
 
-/* About Text */
 .about-text {
     flex: 1;
     max-width: 500px;
@@ -82,7 +79,7 @@ h1 {
 
 .button-link:hover {
     background-color: #6b74a0;
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    transform: scale(1.05);
 }
 
 /* Contact Section */
@@ -116,6 +113,55 @@ footer {
     color: #f2efde;
 }
 
+/* Slideshow Styles for workexp.html and projects.html */
+.slideshow-container {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.slide {
+    display: none;
+    padding: 20px;
+    background-color: #3b455f;
+    border: 1px solid #9da0b3;
+    border-radius: 5px;
+}
+
+.slide.active {
+    display: block;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 10px;
+    margin-top: -20px;
+    color: #f7f5e9;
+    font-size: 1.5rem;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 /* Mobile Layout */
 @media (max-width: 600px) {
     body {
@@ -141,6 +187,7 @@ footer {
 
     .photo-frame img {
         width: 150px;
+        height: auto;
     }
 
     .contact-links {
@@ -151,5 +198,10 @@ footer {
     .nav-links {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .prev, .next {
+        font-size: 1.2rem;
+        padding: 5px;
     }
 }
