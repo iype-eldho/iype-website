@@ -31,98 +31,58 @@ h1 {
 .about-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
     margin-top: 20px;
     gap: 20px;
 }
 
+/* Photo Frame */
 .photo-frame {
+    flex: 1;
+    display: flex;
+    justify-content: center;
     padding: 10px;
-    border: 3px solid #8c8fa1; /* Frame color */
+    border: 3px solid #8c8fa1;
     border-radius: 10px;
-    background-color: #3b455f; /* Background color for the frame */
+    background-color: #3b455f;
 }
 
 .photo-frame img {
-    width: 200px;
+    width: 100%;
+    max-width: 250px;
     height: auto;
     border-radius: 10px;
 }
 
+/* About Text */
 .about-text {
+    flex: 1;
     max-width: 500px;
     color: #f7f5e9;
 }
 
-/* Slideshow Container for workexp.html and projects.html */
-.slideshow-container {
-    position: relative;
-    max-width: 800px;
-    width: 100%;
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-.slide {
-    display: none;
-    padding: 20px;
-    background-color: #3b455f;
-    border: 1px solid #9da0b3;
-    border-radius: 5px;
-}
-
-.slide.active {
-    display: block;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 10px;
-    margin-top: -20px;
-    color: #f7f5e9;
-    font-size: 1.5rem;
-    border: none;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 50%;
-    user-select: none;
-    transition: background 0.3s;
-}
-
-.prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-/* Navigation Links */
+/* Navigation Links as Buttons */
 .nav-links {
     display: flex;
-    flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
-    gap: 15px;
     margin-top: 20px;
 }
 
-.nav-links h3 a {
+.button-link {
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #50597b;
+    padding: 10px 20px;
     text-decoration: none;
-    color: #ebe7d0;
-    padding: 5px 10px;
-    transition: color 0.3s;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.nav-links h3 a:hover {
-    color: #ffffff;
+.button-link:hover {
+    background-color: #6b74a0;
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 /* Contact Section */
@@ -191,10 +151,5 @@ footer {
     .nav-links {
         flex-direction: column;
         gap: 10px;
-    }
-
-    .prev, .next {
-        font-size: 1.2rem;
-        padding: 5px;
     }
 }
